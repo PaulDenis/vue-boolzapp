@@ -1,3 +1,4 @@
+/* common */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,19 +10,25 @@
     left: 10%;
     width: 80%;
     height: 95vh;
-    /* background-color: white; */
+    font-family: 'Roboto', sans-serif;
+}
+.topper {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: #eaeaea;
 }
 /* Background */
 .green {
     background-color: #009688;
     width: 100%;
-    height: 150px;
+    height: 125px;
 }
 
 .grey {
     background-image: linear-gradient(#dddbd1, #d2dbdc);
     width: 100%;
-    height: calc(100vh - 150px);
+    height: calc(100vh - 125px);
 }
 
 /* left column */
@@ -32,10 +39,93 @@
     background-color: white;
 }
 
+#left_side img {
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+}
+#left_side .topper {
+    justify-content: space-between;
+    align-items: center;
+}
+#my_name {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+}
+.personal_data {
+    display: flex;
+    align-items: center;
+}
+
+.icons {
+    margin-right: 15px;
+    color: #b1b1b1;
+}
+.icons i {
+    margin:  5px;
+}
+
+#notifications {
+    width: 100%;
+    height: 70px;
+    background-color: #8edafc;
+}
+#notifications i {
+    font-size: 20px;
+    margin: 15px;
+    padding: 10px 8px;
+    border-radius: 50%;
+    background-color: white;
+    color: #8edafc;
+}
+.notification_text {
+    display: inline-block;
+}
+.notification_text p {
+    font-size: 12px;
+}
+.notification_text span {
+    font-size: 10px;
+}
+
+#search {
+    width: 100%;
+    height: 40px;
+    background-color: #fafafa;
+}
+
+#chats {
+    width: 100%;
+    height: calc(100% - 40px - 60px - 70px);
+    overflow-y: scroll;
+    background-color: white;
+}
+.chat {
+    width: 100%;
+    height: 70px;
+    border-top: 1px solid #e9ebeb;
+}
+.active {
+    background-color: #e9ebeb;
+}
 /* right column */
 #right_side {
     float: right;
     width: 70%;
     height: 100%;
     background-image: url("../img/mine.jpg");
+}
+#right_side .topper {
+    border-left: 1px solid #b1b1b1;
+}
+#text_chat {
+    width: 100%;
+    height: calc(100% - 110px);
+    overflow-y: scroll;
+}
+#text_bar {
+    width: 100%;
+    height: 50px;
+    background-color: #f3eeea;
 }

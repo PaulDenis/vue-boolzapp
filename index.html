@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Boolzapp-web</title>
@@ -13,10 +16,45 @@
     <div class="green"></div>
     <div id="app">
         <section id="left_side">
-        
+            <div class="topper">
+                <div class="personal_data">
+                    <img src="img/avatar_7.jpg" alt="My profile picture">
+                    <h2 id="my_name">Denis Paul</h2>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+
+            </div>
+            <div id="notifications">
+                <i class="fas fa-bell-slash"></i>
+                <div class="notification_text">
+                    <p>Ricevi notifiche di nuovi messaggi</p>
+                    <span>Attiva notifiche desktop</span>
+                </div>
+            </div>
+            <div id="search"></div>
+            <div id="chats">
+                <div class="chat active">
+
+                </div>
+                <div class="chat">
+                    
+                </div>
+                <div class="chat">
+                    
+                </div>
+                <div class="chat">
+                    
+                </div>
+            </div>
         </section>
         <section id="right_side">
-
+            <div class="topper"></div>
+            <div id="text_chat"></div>
+            <div id="text_bar"></div>
         </section>
     </div>    
     <div class="grey"></div>
