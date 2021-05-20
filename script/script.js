@@ -87,10 +87,21 @@ var app = new Vue({
                     }
                 ],
             },
-        ]
+        ],
+        activeIndex: 0,
+        lastText: "",
     },
     methods: {
-
+        getImg: function(contact) {
+            return `img/avatar${contact.avatar}.jpg`;
+        },
+        getLastMessage: function (contact) {
+            return contact.messages[contact.messages.length - 1];
+        },
+        setActive: function(index) {
+            console.log(index);
+            this.activeIndex = index;
+        }
     }
 
 })

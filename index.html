@@ -47,33 +47,61 @@
                 </div>
             </div>
             <div id="chats">
-                <div class="chat active">
-                    <img src="img/avatar_1.jpg" alt="icona">
+                <div
+                v-for="(contact, index) in contacts"
+                @click="setActive(index)"
+                :class="(index == activeIndex) ? 'active' : '' "
+                class="chat">
+                    <img :src="getImg(contact)" alt="icona">
                     <div class="chat_text_preview">
-                        <p>Michele</p>
-                        <span class="grey_small_text">Tutto fatto!...</span>
+                        <p>{{ contact.name }}</p>
+                        <span class="grey_small_text">
+                            {{ getLastMessage(contact).text }}...
+                        </span>
                     </div>
                     <div class="date">
-                        <span class="grey_small_text">10/01/2020 16:15:22</span>
+                        <span class="grey_small_text">{{ getLastMessage(contact).date}}</span>
                     </div>
-                </div>
-                <div class="chat">
-                    
-                </div>
-                <div class="chat">
-                    
-                </div>
-                <div class="chat">
-                    
-                </div>
             </div>
         </section>
         <section id="right_side">
             <div class="topper">
-                
+                <div class="informations">
+                    <img src="img/avatar_1.jpg" alt="profile_picture">
+                    <div class="chat_text_preview">
+                        <p>Michele</p>
+                        <span class="grey_small_text">Ultimo accesso oggi alle 10/01/2020 16:15:22</span>
+                    </div>
+
+                </div>
+                <div class="icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+
+                </div>
             </div>
-            <div id="text_chat"></div>
-            <div id="text_bar"></div>
+            <div id="text_chat">
+                <div class="message sent">
+                    <p>Hai portato a spasso il cane?</p>
+                    <span class="grey_small_text message_date">10/01/2020 15:30:55</span>
+                </div>
+                <div class="message sent">
+                    <p>Ricordati di dargli da mangiare</p>
+                    <span class="grey_small_text message_date">10/01/2020 15:50:00</span>
+
+                </div>
+                <div class="message received">
+                    <p>Tutto fatto!</p>
+                    <span class="grey_small_text message_date">10/01/2020 16:15:22</span>
+
+                </div>
+            </div>
+            <div id="text_bar">
+                <i class="far fa-smile"></i>
+                <input type="text" placeholder="Scrivi un messaggio">
+                <i class="fas fa-microphone"></i>
+            </div>
         </section>
     </div>    
     <div class="grey"></div>
