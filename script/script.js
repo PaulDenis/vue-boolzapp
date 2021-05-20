@@ -1,3 +1,5 @@
+// Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto, ricavandoli dall'array contacts qui allegato
+
 var app = new Vue({
     el: "#app",
     data: {
@@ -90,6 +92,5 @@ var app = new Vue({
     methods: {
 
     }
-}
 
-)
+})
