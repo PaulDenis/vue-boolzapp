@@ -3,7 +3,15 @@
     margin: 0;
     padding: 0;
 }
-
+#app {
+    position: absolute;
+    top: 2.5vh;
+    left: 10%;
+    width: 80%;
+    height: 95vh;
+    /* background-color: white; */
+}
+/* Background */
 .green {
     background-color: #009688;
     width: 100%;
@@ -15,12 +23,19 @@
     width: 100%;
     height: calc(100vh - 150px);
 }
-#app {
-    position: absolute;
-    top: 2.5vh;
-    left: 10%;
-    width: 80%;
-    height: 95vh;
-    /* margin: 2.5vh auto; */
+
+/* left column */
+#left_side {
+    float: left;
+    width: 30%;
+    height: 100%;
     background-color: white;
+}
+
+/* right column */
+#right_side {
+    float: right;
+    width: 70%;
+    height: 100%;
+    background-image: url("../img/mine.jpg");
 }
