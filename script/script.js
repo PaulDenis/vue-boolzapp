@@ -72,7 +72,7 @@ var app = new Vue({
             },
             {
                 name: 'Luisa',
-                avatar: '_4',
+                avatar: '_6',
                 visible: true,
                 messages: [
                     {
@@ -89,19 +89,34 @@ var app = new Vue({
             },
         ],
         activeIndex: 0,
+        activeContactImg: "",
+        activeContactName: "",
+        activeContactOnline: "",
         lastText: "",
     },
     methods: {
         getImg: function(contact) {
+            
+            // console.log(this.activeContact);
             return `img/avatar${contact.avatar}.jpg`;
         },
         getLastMessage: function (contact) {
             return contact.messages[contact.messages.length - 1];
         },
         setActive: function(index) {
-            console.log(index);
+            // console.log(index);
             this.activeIndex = index;
+            var activeContact = this.contacts[index];
+            this.activeContactImg = `img/avatar${activeContact.avatar}.jpg`;
+            this.activeContactName = activeContact.name;
+            this.activeContactOnline = this.getLastMessage(activeContact).date
+            // console.log(this.activeContactOnline);
+            // console.log(activeContact);
         }
+    },
+    mounted () {
+        this.setActive(this.activeIndex);
     }
+
 
 })

@@ -62,15 +62,16 @@
                     <div class="date">
                         <span class="grey_small_text">{{ getLastMessage(contact).date}}</span>
                     </div>
+                </div>
             </div>
         </section>
         <section id="right_side">
             <div class="topper">
                 <div class="informations">
-                    <img src="img/avatar_1.jpg" alt="profile_picture">
+                    <img :src="activeContactImg" alt="profile_picture">
                     <div class="chat_text_preview">
-                        <p>Michele</p>
-                        <span class="grey_small_text">Ultimo accesso oggi alle 10/01/2020 16:15:22</span>
+                        <p>{{ activeContactName }}</p>
+                        <span class="grey_small_text">Ultimo accesso oggi alle {{ activeContactOnline }}</span>
                     </div>
 
                 </div>
