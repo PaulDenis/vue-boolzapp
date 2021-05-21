@@ -101,7 +101,15 @@ var app = new Vue({
             return `img/avatar${contact.avatar}.jpg`;
         },
         getLastMessage: function (contact) {
-            return contact.messages[contact.messages.length - 1];
+            return contact.messages[contact.messages.length - 1]; 
+        },
+        textLenght: function(contact) {
+            let text = this.getLastMessage(contact).text;
+            if (text.length < 30) {
+                return text;
+            } else {
+                return `${text.substring(0, 29)}...`;
+            }
         },
         setActive: function(index) {
             // console.log(index);
