@@ -83,7 +83,13 @@
                 </div>
             </div>
             <div id="text_chat">
-                <div class="message sent">
+                <div class="message"
+                v-for="(message, index) in contacts[activeIndex].messages"
+                :class="message.status == 'sent' ? 'sent' : 'received'">
+                    <p>{{ message.text }}</p>
+                    <span class="grey_small_text message_date">{{ message.date }}</span>
+                 </div>
+                <!-- <div class="message sent">
                     <p>Hai portato a spasso il cane?</p>
                     <span class="grey_small_text message_date">10/01/2020 15:30:55</span>
                 </div>
@@ -96,7 +102,7 @@
                     <p>Tutto fatto!</p>
                     <span class="grey_small_text message_date">10/01/2020 16:15:22</span>
 
-                </div>
+                </div> -->
             </div>
             <div id="text_bar">
                 <i class="far fa-smile"></i>
