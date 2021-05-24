@@ -93,7 +93,8 @@ var app = new Vue({
         activeContactName: "",
         activeContactOnline: "",
         lastText: "",
-        newMessage: ""
+        newMessage: "",
+        searchFor: ""
     },
     methods: {
         getImg: function(contact) {
@@ -151,7 +152,21 @@ var app = new Vue({
         let messages = document.getElementsByClassName("message");
         let LastMSG = messages[messages.length - 1];
         LastMSG.scrollIntoView();
+
+        for (let i=0; i < this.contacts.length; i++) {
+            let lowerName = this.contacts[i].name.toLowerCase();
+            if (lowerName.startsWith(this.searchFor.toLowerCase())) {
+                this.contacts[i].visible = "ture";
+            } else {
+                this.contacts[i].visible = false;
+            }
+        }
+        // if (this.contacts[1].name.startsWith(this.searchFor)) {
+        //     this.contacts[1].visible = "true";
+        //     console.log(1);
+        // } else {
+        //     this.contacts[1].visible = "false";
+        //     console.log(2);
+        // }
     }
-
-
 })

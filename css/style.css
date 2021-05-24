@@ -152,6 +152,9 @@
 .active {
     background-color: #e9ebeb;
 }
+.hiden {
+    display: none;
+}
 
 .chat_text_preview {
     display: inline-block;
