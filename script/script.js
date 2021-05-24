@@ -93,6 +93,7 @@ var app = new Vue({
         activeContactName: "",
         activeContactOnline: "",
         lastText: "",
+        newMessage: ""
     },
     methods: {
         getImg: function(contact) {
@@ -120,10 +121,36 @@ var app = new Vue({
             this.activeContactOnline = this.getLastMessage(activeContact).date
             // console.log(this.activeContactOnline);
             // console.log(activeContact);
+        },
+        sendMessage: function(value) {
+            // console.log(this.activeIndex);
+            this.contacts[this.activeIndex].messages.push({
+                date:dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                text:value, 
+                status:"sent",
+            });
+            this.newMessage="";
+            this.answer();
+        },
+        answer: function() {
+            setTimeout(() => {
+                this.contacts[this.activeIndex].messages.push(
+                    {
+                        date:dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                        text: "ok",
+                        status: "received"
+                    }
+                )}, 1000
+            );
         }
     },
     mounted () {
         this.setActive(this.activeIndex);
+    },
+    updated () {
+        let messages = document.getElementsByClassName("message");
+        let LastMSG = messages[messages.length - 1];
+        LastMSG.scrollIntoView();
     }
 
 
