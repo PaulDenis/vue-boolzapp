@@ -140,9 +140,8 @@ var app = new Vue({
                         date:dayjs().format("DD/MM/YYYY HH:mm:ss"),
                         text: "ok",
                         status: "received"
-                    }
-                )}, 1000
-            );
+                    });
+            }, 1000);
         }
     },
     mounted () {
@@ -161,12 +160,6 @@ var app = new Vue({
                 this.contacts[i].visible = false;
             }
         }
-        // if (this.contacts[1].name.startsWith(this.searchFor)) {
-        //     this.contacts[1].visible = "true";
-        //     console.log(1);
-        // } else {
-        //     this.contacts[1].visible = "false";
-        //     console.log(2);
-        // }
+
     }
 })
